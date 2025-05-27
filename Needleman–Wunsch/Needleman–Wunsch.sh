@@ -1,0 +1,1 @@
+python3 Needleman–Wunsch.py "$1" "$2"

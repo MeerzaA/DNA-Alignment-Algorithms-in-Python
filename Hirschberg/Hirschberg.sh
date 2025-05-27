@@ -1,0 +1,1 @@
+python3 Hirschberg.py "$1" "$2"
