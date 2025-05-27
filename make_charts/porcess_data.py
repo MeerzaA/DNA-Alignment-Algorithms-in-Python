@@ -4,8 +4,8 @@ import subprocess
 import re
 
 input_dir = "datapoints"
-basic_dir = "basic"
-eff_dir = "efficient"
+basic_dir = "Needleman_Wunsch results"
+eff_dir = "Hirschberg results"
 
 os.makedirs(basic_dir, exist_ok=True)
 os.makedirs(eff_dir, exist_ok=True)
@@ -41,8 +41,8 @@ for file in sorted(os.listdir(input_dir), key=lambda f: int(re.search(r"in(\d+)"
     eff_output = os.path.join(eff_dir, f"{base_name}_eff_out.txt")
 
     # Run both programs
-    subprocess.run(["python", "basic_3.py", input_path, basic_output])
-    subprocess.run(["python", "efficient_3.py", input_path, eff_output])
+    subprocess.run(["python", "Needleman_Wunsch/Needleman_Wunsch.py", input_path, basic_output])
+    subprocess.run(["python", "Hirschberg/Hirschberg.py", input_path, eff_output])
 
     # Read outputs
     with open(basic_output) as f:
